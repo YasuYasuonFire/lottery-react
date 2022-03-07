@@ -55,6 +55,8 @@ class App extends React.Component {
       <div>
           <h2>ETH大抽選会</h2>
           <p>このスマートコントラクトは  {this.state.manager}  が作りました</p>
+          <p>Rinkeby Testnet Networkで接続してください</p>
+          <p>TestnetのETHは一切の通貨価値を持ちません。お遊び用コントラクトです</p>
           <p>現在の参加者は  {this.state.players.length}  人です</p>
           <p>現在の賞金額は  {web3.utils.fromWei(this.state.balance,'ether')}  ETHです</p>
      
@@ -63,7 +65,7 @@ class App extends React.Component {
           <form onSubmit={this.onSubmit}>
             <h4>宝くじに参加しますか？</h4>
             <div>
-              <label>賭けるETHを入力してください</label>
+              <label>賭けるETHを入力してください(0.01より大きい額)</label>
               <input
                 value = {this.state.value}
                 onChange={event => this.setState({value:event.target.value})}
